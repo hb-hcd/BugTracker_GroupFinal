@@ -1,0 +1,29 @@
+﻿@model ProjectUser
+
+@{
+    ViewBag.Title = "Unassign user";
+    Layout = "_Layout";
+}
+
+<h2>Unassign user</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AssignUser" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label">User</label>
+                <select asp-for="UserId" class="form-control" asp-items="@ViewBag.users" ></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectId" class="control-label">User</label>
+                <select asp-for="ProjectId" class="form-control" asp-items="@ViewBag.projects" ></select>
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Assign" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
